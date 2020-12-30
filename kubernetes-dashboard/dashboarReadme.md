@@ -17,5 +17,6 @@ I find it's time consumming, so here are some steps you may needed:
 5-	Assign a password
 6-	If you previousely run kubelet join
 	a.	Run this kubeadm reset –force
-	b.	You should add this one with join command --ignore-preflight-errors='DirAvailable--etc-kubernetes-manifests,FileAvailable--etc-kubernetes-kubelet.conf,Port-10250,FileAvailable--etc-kubernetes-pki-ca.crt'
+	b.	You should add this one with join command --ignore-preflight-errors='DirAvailable--etc-kubernetes-manifests,FileAvailable--etc-kubernetes-kubelet.conf,Port-   
+  10250,FileAvailable--etc-kubernetes-pki-ca.crt'
 
