@@ -30,4 +30,4 @@ admin
 openssl base64 -d
 cHJvbS1vcGVyYXRvcg==
 prom-operator
-
+you can rename the password afterwards!
