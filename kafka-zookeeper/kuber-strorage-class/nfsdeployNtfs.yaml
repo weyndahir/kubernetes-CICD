@@ -1,0 +1,37 @@
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: elastisearch-provisioner
+spec:
+  replicas: 
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: elasticsearch-provisioner
+  template:
+    metadata:
+      labels:
+        app: elasticsearch-provisioner
+    spec:
+      serviceAccountName: nfs-client-provisioner
+      containers:
+        - name: nfs-client-provisioner
+          image: quay.io/external_storage/nfs-client-provisioner:latest
+          volumeMounts:
+            - name: nfs-client-root
+              mountPath: /persistentvolumes
+            
+          env:
+            - name: PROVISIONER_NAME
+              value: example.com/nfs
+            - name: NFS_SERVER
+              value: 10.0.0.102
+            - name: NFS_PATH
+              value: /srv/nfs/kubedata
+           
+      volumes:
+        - name: nfs-client-root
+          nfs:
+            server: 10.0.0.102
+            path: /srv/nfs/kubedata

@@ -1,2 +1,0 @@
-this is a test
-will add more stuff, specaily kafka and zookeeper verysoon
