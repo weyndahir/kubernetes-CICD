@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nifi-svc
+  namespace: default
+spec:
+  type: LoadBalancer
+  selector:
+    app: nifi
+  ports:
+  - port: 8443
+    targetPort: 8443
