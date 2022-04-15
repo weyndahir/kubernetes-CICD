@@ -20,5 +20,5 @@ spec:
     protocol: TCP
   selector:
     app: zookeeper-1
-  type: NodePort
+  type: LoadBalancer
 

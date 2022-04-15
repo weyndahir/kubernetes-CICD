@@ -3,11 +3,11 @@ kind: Service
 metadata:
   name: jenkins
 spec:
-  type: NodePort
+  type: LoadBalancer
   ports:
     - port: 8080
       targetPort: 8080
-      nodePort: 30100
+      
   selector:
     app: jenkins
 
